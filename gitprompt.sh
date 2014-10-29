@@ -301,7 +301,7 @@ function setGitPrompt() {
   local repo=`git rev-parse --show-toplevel 2> /dev/null`
   if [[ ! -e "$repo" ]] && [[ "$GIT_PROMPT_ONLY_IN_REPO" = 1 ]]; then
     # we do not permit bash-git-prompt outside git repos, so nothing to do
-    PS1="$OLD_GITPROMPT"
+    PS1="\n$OLD_GITPROMPT"
     return
   fi
   
@@ -311,7 +311,7 @@ function setGitPrompt() {
   git_prompt_config
 
   if [[ ! -e "$repo" ]]; then
-    PS1="$EMPTY_PROMPT"
+    PS1="\n$EMPTY_PROMPT"
     return
   fi
 
@@ -327,7 +327,7 @@ function setGitPrompt() {
   fi
 
   if [[ "$GIT_PROMPT_IGNORE" = 1 ]]; then
-    PS1="$EMPTY_PROMPT"
+    PS1="\n$EMPTY_PROMPT"
     return
   fi
 
@@ -451,7 +451,7 @@ function updatePrompt() {
     NEW_PROMPT="$EMPTY_PROMPT"
   fi
 
-  PS1="${NEW_PROMPT/_LAST_COMMAND_INDICATOR_/${LAST_COMMAND_INDICATOR}}"
+  PS1="\n${NEW_PROMPT/_LAST_COMMAND_INDICATOR_/${LAST_COMMAND_INDICATOR}}"
 }
 
 function prompt_callback_default {
