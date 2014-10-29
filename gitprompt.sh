@@ -29,7 +29,7 @@ function git_prompt_config()
 
   # Bold
   local BoldGreen="\[\033[1;32m\]"    # Green
-  local BoldBlue="\[\033[1;34m\]"     # Blue
+  local BoldBlue="\[\033[0;04m\]"     # Blue
 
   # High Intensty
   local IntenseBlack="\[\033[0;90m\]" # Grey
@@ -91,8 +91,8 @@ function git_prompt_config()
 
     GIT_PROMPT_START_USER="${Yellow}${PathShort}${ResetColor}"
     GIT_PROMPT_START_ROOT="${Yellow}${PathShort}${ResetColor}"
-    GIT_PROMPT_END_USER=" \n${White}${Time12a}${ResetColor} $ "
-    GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} # "
+    GIT_PROMPT_END_USER=" \n${Magenta}${Time12a}${ResetColor} $ "
+    GIT_PROMPT_END_ROOT=" \n${Magenta}${Time12a}${ResetColor} # "
 
     # Please do not add colors to these symbols
     GIT_PROMPT_SYMBOLS_AHEAD="↑·"

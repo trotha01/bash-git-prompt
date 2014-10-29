@@ -1,4 +1,4 @@
-local Time12a="\$(date +%H:%M)"
+local Time12a="${Green}\$(date +%H:%M)"
 local PathShort="\w"
 
 # These are the color definitions used by gitprompt.sh
@@ -18,8 +18,8 @@ GIT_PROMPT_CLEAN="${BoldGreen}✔"      # a colored flag indicating a "clean" re
 
 GIT_PROMPT_START_USER="${Yellow}${PathShort}${ResetColor}"
 GIT_PROMPT_START_ROOT="${Yellow}${PathShort}${ResetColor}"
-GIT_PROMPT_END_USER=" \n${White}${Time12a}${ResetColor} $ "
-GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} # "
+GIT_PROMPT_END_USER=" \n${White}${Time12a}${ResetColor} ${Magenta}$ ${White}"
+GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} ${Magenta}# ${White}"
 
 # Please do not add colors to these symbols
 GIT_PROMPT_SYMBOLS_AHEAD="↑·"         # The symbol for "n versions ahead of origin"
